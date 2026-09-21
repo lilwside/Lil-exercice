@@ -1,0 +1,24 @@
+{
+  // Ordinateur de développement dans le cloud (GitHub Codespaces).
+  // Utile quand on n'a pas d'ordinateur : on pilote tout depuis le navigateur.
+  "name": "BlaBlaCar Plan B — Expo",
+  "image": "mcr.microsoft.com/devcontainers/javascript-node:22",
+
+  // Installe les dépendances dès la création du Codespace.
+  "postCreateCommand": "npm install",
+
+  // Port du serveur de développement Expo (Metro).
+  "forwardPorts": [8081],
+  "portsAttributes": {
+    "8081": {
+      "label": "Expo (Metro)",
+      "onAutoForward": "notify"
+    }
+  },
+
+  "customizations": {
+    "vscode": {
+      "extensions": ["expo.vscode-expo-tools"]
+    }
+  }
+}

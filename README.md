@@ -12,7 +12,7 @@ Les règles du projet sont dans [CLAUDE.md](./CLAUDE.md).
 - Expo Router (navigation par fichiers)
 - Supabase (à connecter à l'étape 4)
 
-## Démarrer
+## Démarrer (sur un ordinateur)
 
 ```bash
 npm install
@@ -20,7 +20,30 @@ npx expo start
 ```
 
 Puis scannez le QR code avec **Expo Go** sur votre téléphone (le téléphone et l'ordinateur
-doivent être sur le même réseau Wi‑Fi ; sinon lancez `npx expo start --tunnel`).
+doivent être sur le même réseau Wi‑Fi ; sinon lancez `npm run tunnel`).
+
+## Démarrer (depuis un iPad, sans ordinateur)
+
+iOS ne permet pas d'installer Node.js. On utilise donc **GitHub Codespaces**, un ordinateur
+Linux dans le cloud que l'on pilote depuis Safari. Le dépôt contient déjà la configuration
+nécessaire (`.devcontainer/`).
+
+1. Sur l'iPad, installez **Expo Go** depuis l'App Store.
+2. Dans Safari, ouvrez le dépôt sur github.com.
+3. Bouton **Code** → onglet **Codespaces** → **Create codespace on…**.
+4. Attendez que l'éditeur s'ouvre et que `npm install` se termine tout seul.
+5. Dans le terminal (menu ☰ → Terminal → New Terminal), lancez :
+
+   ```bash
+   npm run tunnel
+   ```
+
+   Si Expo propose d'installer `@expo/ngrok`, répondez oui.
+6. Copiez l'adresse affichée, qui commence par `exp://`.
+7. Ouvrez **Expo Go** → **Enter URL manually** → collez l'adresse.
+
+Pensez à arrêter le Codespace quand vous avez fini (github.com/codespaces → **Stop codespace**),
+sinon il consomme votre quota gratuit.
 
 ## Variables d'environnement
 
